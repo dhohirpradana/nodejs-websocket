@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  sjf:
+    image: 192.168.1.119:5000/websocket
+    ports:
+      - "20001:20001"
+      - "20000:20000"
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
